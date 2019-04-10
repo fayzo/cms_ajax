@@ -1,0 +1,28 @@
+@font-face { font-family: 'Dancing Script'; 
+             font-style: normal; 
+             font-weight: 400; 
+             src: url('fonts_dancing_script/dancing-script-v9-latin-regular.eot'); 
+             src: local('Dancing Script Regular'), local('DancingScript-Regular'), 
+             url('fonts_dancing_script/dancing-script-v9-latin-regular.eot?#iefix') format('embedded-opentype'), 
+             url('fonts_dancing_script/dancing-script-v9-latin-regular.woff2') format('woff2'), 
+             url('fonts_dancing_script/dancing-script-v9-latin-regular.woff') format('woff'), 
+             url('fonts_dancing_script/dancing-script-v9-latin-regular.ttf') format('truetype'), 
+             url('fonts_dancing_script/dancing-script-v9-latin-regular.svg#DancingScript') format('svg'); 
+}
+body{
+    background: rgb(216, 139, 139,0.5)
+}           
+#bt{
+    font-family: Dancing Script;
+    font-size: 40px;
+    width: 230px;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+.fi{
+    transform: scale (2);
+    background : #ccff00;
+    top : 100px;
+    left : 50px;
+}

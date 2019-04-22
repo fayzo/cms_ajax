@@ -134,7 +134,7 @@
                          </div>
                      </td>
                      <td class="text-center">
-                         <i class="fab fa-cc-mastercard" style="font-size:24px"></i>
+                         <i class="fa fa-cc-mastercard" style="font-size:24px"></i>
                      </td>
                      <td>
                          <div class="small text-muted">Last login</div>

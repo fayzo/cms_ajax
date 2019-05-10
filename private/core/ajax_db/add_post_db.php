@@ -45,7 +45,7 @@ if (isset($_POST['key'])) {
 							</td>
 							</td>
 							<td  style="width:100px;"id="image_'.$row["post_id"].'">
-							<img width = "60px"  src="'.BASE_URL_LINK.'image/uploads_posts/'.$row["image"].'"></td>
+							<img width = "60px"  src="'.BASE_URL_LINK_ALL.'image/uploads_posts/'.$row["image"].'"></td>
 							<td  style="width:100px;"id="athors_'.$row["post_id"].'">
 							'.
                             (strlen($row["athors"]) > 20 ?

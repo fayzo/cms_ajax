@@ -1,86 +1,73 @@
- <?php
-            //   TABLE OF ADDPOST
-         $sql_post = $conn->query("SELECT COUNT(*) FROM addpost");
-         $row_addpost = $sql_post->fetch_array();
-         $total_post= array_shift($row_addpost);
-          //   TABLE OF USERS
-         $sql_users = $conn->query("SELECT COUNT(*) FROM add_admin");
-         $row_users = $sql_users->fetch_array();
-         $total_users= array_shift($row_users);
-            //  TOTAL OF COMMENT
-         $sql = $conn->query("SELECT COUNT(*) FROM comment");
-         $row = $sql->fetch_array();
-         $totalcomment= array_shift($row);
-            // TOTAL OF APPROVAL COMMENTS
-         $sql_approval = $conn->query("SELECT COUNT(*) FROM comment WHERE approved='on'");
-         $row_approval = $sql_approval->fetch_array();
-         $total_approval= array_shift($row_approval);
-        //   TOTAL OF UN-APPROVAL COMMENTS
-         $sql_unapproval = $conn->query("SELECT COUNT(*) FROM comment WHERE approved='off'");
-         $row_unapproval = $sql_unapproval->fetch_array();
-         $total_unapproval= array_shift($row_unapproval);
-?>
+             <!-- TABLE OF ADDPOST -->
+
  <h4 class="display-5 mb-2 text-center">DASH-BOARD</h4>
-  <div class="card mb-3">
-   <div class="main-active p-3">
-       Website Overview
-   </div>
-   <div class="card-body text-center">
-       <div class="row">
-           <div class="col-md-3 mb-2">
-               <div class="card bg-light">
-                   <div class="card-body">
-                       <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $total_users ;?></h4>
-                       <p class="card-text">Users</p>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-3 mb-2">
-               <div class="card bg-light">
-                   <div class="card-body">
-                       <h4 class="card-title"><i class="fa fa-book" aria-hidden="true"></i> <?php echo  $totalcomment ;?></h4>
-                       <p class="card-text">N0 OF Comments</p>
-                   </div>
-               </div>
-            </div>
-            <div class="col-md-3 mb-2">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <h4 class="card-title"><i class="fa fa-book" aria-hidden="true"></i> <?php echo $total_approval ;?></h4>
-                        <p class="card-text">Approvals Comments</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-2">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <h4 class="card-title"><i class="fa fa-book" aria-hidden="true"></i> <?php echo $total_unapproval ;?></h4>
-                        <p class="card-text">Un-Approvals Comments</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-2">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <h4 class="card-title"><i class="fa fa-pen" aria-hidden="true"></i> <?php echo $total_post ;?></h4>
-                        <p class="card-text">Posts</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-2">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <h4 class="card-title"><i class="material-icons md-48"> insert_chart </i> 3435</h4>
-                        <p class="card-text">Visitors</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-  <!-- END OF CARD -->
+ <div class="card mb-3">
+     <div class="main-active p-3">
+         Website Overview
+     </div>
+     <div class="card-body text-center">
+         <div class="row">
+             <div class="col-md-3 mb-2">
+                 <div class="card bg-light">
+                     <div class="card-body">
+                         <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>
+                             <?php echo $user_admin->countUSERS() ;?></h4>
+                         <p class="card-text">Users</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-3 mb-2">
+                 <div class="card bg-light">
+                     <div class="card-body">
+                         <h4 class="card-title"><i class="fa fa-book" aria-hidden="true"></i>
+                             <?php echo  $user_admin->countCOMMENTS() ;?></h4>
+                         <p class="card-text">N0 OF Comments</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-3 mb-2">
+                 <div class="card bg-light">
+                     <div class="card-body">
+                         <h4 class="card-title"><i class="fa fa-book" aria-hidden="true"></i>
+                             <?php echo $user_admin->countApprovalCOMMENTS() ;?></h4>
+                         <p class="card-text">Approvals Comments</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-3 mb-2">
+                 <div class="card bg-light">
+                     <div class="card-body">
+                         <h4 class="card-title"><i class="fa fa-book" aria-hidden="true"></i>
+                             <?php echo $user_admin->countUnapprovalCOMMENTS() ;?></h4>
+                         <p class="card-text">Un-Approvals Comments</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-3 mb-2">
+                 <div class="card bg-light">
+                     <div class="card-body">
+                         <h4 class="card-title"><i class="fa fa-pen" aria-hidden="true"></i> <?php echo $user_admin->countPOSTS() ;?>
+                         </h4>
+                         <p class="card-text">Posts</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-3 mb-2">
+                 <div class="card bg-light">
+                     <div class="card-body">
+                         <h4 class="card-title"><i class="material-icons md-48"> insert_chart </i> 3435</h4>
+                         <p class="card-text">Visitors</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ <!-- END OF CARD -->
 
+ <!-- Calendar -->
 
+ <!-- CARD -->
  <div class="card mb-3">
      <div class="card-body">
          <table class="table table-responsive-sm table-hover ">
@@ -98,39 +85,53 @@
                  </tr>
              </thead>
              <tbody>
-             <?php 
-			  $increment= 0;
-              $result= $conn->query("SELECT * FROM add_admin");
-			if ($result->num_rows > 0) {
-              while($row= $result->fetch_array()){ ?>
+                 <?php 
+			         $increment= 1;
+                     $result= $db->query("SELECT * FROM add_admin");
+			       if ($result->num_rows > 0) {
+                     while($row= $result->fetch_array()){ ?>
                  <tr>
                      <td><?php echo  $increment++ ; ?></td>
                      <td class="text-center">
                          <div class="avatar">
-                             <img class="img-avatar" src="<?php echo BASE_URL_LINK ;?>image/file_log/filed.png" width="20px" alt="admin@bootstrapmaster.com">
+                             <?php 
+                                 if(!empty($row["profile_image"])){?>
+                             <img class="img-avatar"
+                                 src="assets/image/uploads/<?php echo $row["profile_image"] ;?>"
+                                 width="80px" alt="<?php echo $row["email"] ;?>">
+                             <?php }else{?>
+                             <img class="img-avatar" src="../assets/image/image_default/defaultprofileimage.png"
+                                 width="80px" alt="<?php echo $row["email"] ;?>">
+                             <?php } ?>
                              <span class="avatar-status badge-success"></span>
                          </div>
                      </td>
                      <td>
-                         <div><?php echo $row["admin_id"] ;?> <?php echo $row["lastname"];?></div>
+                         <div><?php echo $row["lastname"];?></div>
                          <div class="small text-muted">
-                             <span>New</span> | Registered: Jan 1, 2015</div>
+                             <span><?php echo $user_admin->lengths($user_admin->timeAgo($row["date"]));?> |Registered :<?php echo $user_admin->timeAgo($row["date"]);?>
+                             </span>
+                         </div>
+                         <!-- -Jan 1, 2015 -->
                      </td>
                      <td class="text-center">
-                         <i class="flag-icon flag-icon-rw h4 mb-0" id="us" title="us"></i>
+                         <!-- <i class="flag-icon flag-icon-rw h4 mb-0" id="us" title="us"></i> -->
+                         <i class="flag-icon flag-icon-<?php echo strtolower($row["country"]) ;?> h4 mb-0"
+                             id="<?php echo strtolower($row["country"]) ;?>" title="us"></i>
                      </td>
                      <td>
                          <div class="clearfix">
-                             <div class="float-left">
-                                 <strong>50%</strong>
+                             <div class="text-center">
+                                 <strong><?php echo $row["counts_login"] ;?>%</strong>
                              </div>
-                             <div class="float-right">
-                                 <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                             <div>
+                                 <small
+                                     class="text-muted"><?php echo date('M j, Y',strtotime($row["date"]))." - ".date('M j, Y',strtotime($row["last_login"]));?></small>
+                                 <!-- Jun 11, 2015 - Jul 10, 2015 -->
                              </div>
                          </div>
                          <div class="progress progress-xs">
-                             <div class="progress-bar bg-success" role="progressbar" style="width: 50%"
-                                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                             <?php echo $user_admin->Users_usage_dashboard($row["counts_login"]) ;?>
                          </div>
                      </td>
                      <td class="text-center">
@@ -138,10 +139,11 @@
                      </td>
                      <td>
                          <div class="small text-muted">Last login</div>
-                         <strong>10 sec ago</strong>
+                         <small><?php echo $user_admin->timeAgo($row["last_login"]);?></small>
                      </td>
                  </tr>
-              <?php } }?>
+                 <?php } }?>
+
              </tbody>
          </table>
      </div>

@@ -1,0 +1,13 @@
+.build1 {
+    background: url(http://localhost:84/Blog_nyarwanda_CMS/assets/image/background_image/build1.jpg) fixed center center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    width: 100%;
+}
+
+.chair {
+    background: url(http://localhost:84/Blog_nyarwanda_CMS/assets/image/background_image/chair.jpg) fixed center center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    width: 100%;
+}

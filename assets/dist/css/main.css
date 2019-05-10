@@ -1,0 +1,228 @@
+/* .sticky-top{
+   z-index: 1029 !important;
+} */
+.dropdown-menu {
+    /* left: -60% !important; */
+    padding: none !important;
+}
+
+.blog-footer {
+  width: 100%;
+  bottom: 0;
+  padding: 1rem 0;
+  text-align: center;
+  border-top: .05rem solid #e5e5e5;
+}
+.blog-footer ul li a {
+  text-decoration:none;
+  color:white;
+}
+.blog-footer ul li a:hover {
+  text-decoration:none;
+  color:rgb(105, 85, 46);
+}
+.blog-footer a{
+  text-decoration:none;
+  color:white;
+}
+
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+#black .main-active{
+    background-color: #333333;
+    color:#ffff;
+}
+#black .list-group-item.active {
+    color: #fff !important;
+    background-color: #333333 !important;
+    border-color: #333333 !important;
+}
+
+#yellow .main-active{
+    background-color: #f9e12a;
+    color:#061f25;
+}
+#yellow .list-group-item.active {
+    color: #061f25 !important;
+    background-color: #f9e12a !important;
+    border-color: #f9e12a !important;
+}
+
+#blue  .main-active{
+    background-color: #2a4bf9;
+    color:#dae6e8;
+}
+#blue  .list-group-item.active {
+    color: #dae6e8 !important;
+    background-color: #2a4bf9 !important;
+    border-color: #2a4bf9 !important;
+}
+
+#purple .main-active{
+    background-color: #a335ab;
+    color:#ecf0f1;
+}
+#purple .list-group-item.active {
+    color: #ecf0f1 !important;
+    background-color: #a335ab !important;
+    border-color: #a335ab !important;
+}
+
+#rose  .main-active{
+    background-color: #da0e6c;
+    color:#ecf1ec;
+}
+#rose  .list-group-item.active {
+    color: #ecf1ec !important;
+    background-color: #da0e6c !important;
+    border-color: #da0e6c !important;
+}
+
+#green .main-active{
+    background-color:#36f92a;
+    color:#283b40;
+}
+#green .list-group-item.active {
+    color: #283b40 !important;
+    background-color: #36f92a !important;
+    border-color: #36f92a !important;
+}
+
+#chocolate  .main-active{
+    background-color:#736357;
+    color:#ecf0f1;
+}
+#chocolate  .list-group-item.active {
+    color: #ecf0f1 !important;
+    background-color: #736357 !important;
+    border-color: #736357 !important;
+}
+
+#blue .borders-tops {
+  border-top: 3px solid #3953a4;
+}
+
+#yellow .borders-tops {
+  border-top: 3px solid #eedf11;
+}
+
+#green .borders-tops {
+  border-top: 3px solid #00a651;
+}
+
+#purple .borders-tops {
+  border-top: 3px solid #994299;
+}
+
+#rose .borders-tops {
+  border-top: 3px solid #da166d;
+}
+
+#chocolate .borders-tops {
+  border-top: 3px solid #736357;
+}
+
+#black .borders-tops {
+  border-top: 3px solid #333333;
+}
+
+/* CHANGE COLOR BACKGROUND */
+/* #black {
+  background-color: #333;
+  color: #fff;
+}
+
+#yellow {
+  background-color: #ffc107;
+  color: #343a40;
+} */
+
+#green {
+  background-color: #28a745;
+  color: #343a40;
+}
+#green .modal-content {
+  background-color: #28a745;
+  color: #343a40;
+}
+
+#white {
+  background-color: none;
+  color: none;
+}
+#white .modal {
+  background-color: none;
+  color: none;
+}
+
+/* SEARCH IN NAVBAR */
+
+.search-result {
+position: absolute;
+}
+.nav-right-down-wrap {
+  width: 260px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  position: absolute;
+  background: #f8f9fa;
+  top: 25px;
+}
+
+.nav-right-down-inner {
+  padding-top: 2px; 
+  overflow: hidden;
+}
+
+.nav-right-down-wrap ul {
+  list-style-type: none;
+  padding-left: 10px;
+  float: none !important;
+}
+
+.nav-right-down-left {
+  float: left;
+  margin: 0px 5px 0px 0px;
+}
+
+.nav-right-down-left img {
+  width: 35px !important;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px rgb(182, 172, 172) solid;
+}
+
+.nav-right-down-right-body {
+  line-height: 1px;
+}
+
+.nav-right-down-right-headline a {
+  font-weight: bold;
+  padding: 0px 2px;
+  font-size: 14px;
+}
+
+.nav-right-down-right-headline span {
+  color: #A1A1A1;
+}
+
+.nav-right-down-right-body div {
+  clear: both;
+  color: #A1A1A1;
+  padding: 3px 3px;
+}
+
+.nav-right-down-right {
+  float: left;
+  margin: 0px 2px;
+}
+
+.nav-right-down-wrap ul li:hover a {
+  color: #fff;
+}
+
+.nav-right-down-wrap ul li:hover span {
+  color: rgb(206, 84, 14);
+}

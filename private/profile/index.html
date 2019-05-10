@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>profile</title>
+    <style>
+        body{
+            background-color: #ecf0f5
+        }
+         /* H1 - H6 font */
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6
+.p {
+  font-family: 'Source Sans Pro', sans-serif  !important;
+  font-weight: lighter  !important;
+  font-size:14px !important
+} */
+ .profile {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        padding: 10px;
+        width: 300px; 
+        background-color: #ffffff;
+        border-radius: 5px ;
+        border-top: 3px solid #3c8dbc;
+    }
+    .profile > .user-name {
+        text-align: center;
+    }
+    .profile-user-img {
+        margin: 0 auto;
+        width: 100px;
+        padding: 4px;
+        border: 3px solid #9894a0;
+        border-radius: 50%;
+    }
+
+    .profile > ul {
+        list-style-type: none;
+        margin:0;
+        padding-left:10px;
+    }
+    .profile > ul > li{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.42857143;
+        position: relative;
+    }
+     .profile > ul > li > a:hover, a:active, a:focus{
+         color:#72afd2;
+    }
+
+     .profile > ul > li > a{
+         color: blue;
+    }
+    #about-me{
+        padding: 10px;
+        width: 300px; 
+        background-color: #ffffff;
+        border-radius: 5px ;
+        border-top: 3px solid #3c8dbc;
+    }
+     input:hover {
+         background-color: #3c8dbc;
+        }
+    .input {
+        outline: none;
+        color: #fff;
+        background-color: #204d74; 
+        /* border: 1px solid #367fa9; */
+        border-radius:10px;
+        width:100%;
+        padding:10px;
+    }
+
+   
+    
+    /* .multicol {
+    column-count: 2;
+    column-gap: 1em;
+    column-rule: 1px dotted black;
+    } */
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+     <div class="row">
+         <div class="col-md-3">
+             <div class="profile">
+                <div class='user-name'>
+                    <img class="profile-user-img" src="<?php echo BASE_URL_LINK ;?>image/img/avatar3.png" alt="cartonn">
+                    <h3>Monica</h3><small>Monica</small>
+                </div>
+                <ul>
+                    <hr>
+                    <li>Followers<a>1,300</a></li>
+                    <hr>
+                    <li>Followings<a>343</a></li>
+                    <hr>
+                    <li>Friends<a>1,294</a></li>
+                    <hr>
+                </ul>
+                <input type="button"class="input" value="Follow" >
+              </div>
+
+   z          <div id="about-me">
+                 <h1>About Me</h1>
+                 <h4>Education</h4>
+                 <p>B.S. in Computer Science from the University of Tennessee at Knoxville</p>
+                  <hr>
+                 <h4>Location</h4>
+                 <p>Malibu, California</p>
+                  <hr>
+                 <h4>Skills</h4>
+                  <p><a>UI</a> <a>Design</a> <a>Coding</a> <a>Javascript</a> <a>PHP</a> <a>Node.js</a></p>
+                  <hr>
+                  <h4>Notes</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+              </div>
+        </div>
+         <div class="col-md-9">
+        </div>
+     </div>
+</div>
+ 
+
+
+
+
+    <div class="multicol">
+        <p style="float:left;">amauru</p>
+        <p >ndaho</p>
+        <p style="clear: left;"  class="clear">umeze gute</p>
+    </div>
+    <video controls poster="../assets/image/img/avatar3.png" width="640" height="360">
+        <source src="git.mp4" type="video/mp4"> 
+        <!-- <source src="video/boatride.webm" type="video/webm">  -->
+            <!-- fallback content here -->
+    </video>
+    <audio controls>
+        <source src="50-Cent-Baby-By-Me-ft-Ne-Yo-128K-MP3.mp3" type="audio/mp3">
+        <!-- <source src="audio/heavymetal.ogg" type="audio/ogg">  -->
+            <!-- fallback content here -->
+    </audio>
+    <figure>
+        <p><img src="../assets/image/img/avatar3.png" alt="This is a picture containing p important content"></p>
+        <figcaption>This is a very important picture.</figcaption>
+    </figure>
+    <form action="">
+    <input type="text" pattern="[1-6]{3}">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <canvas id="canvas" width="480" height="320">
+        <!-- fallback content here -->
+    </canvas>
+</body>
+</html>

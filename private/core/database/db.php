@@ -1,5 +1,5 @@
 <?php
- $user = 'root'; $password = ''; $db = 'upand_running'; $host = '127.0.0.1'; $port = 3308;
+        $user = 'root'; $password = ''; $db = 'upand_running'; $host = '127.0.0.1'; $port = 3308;
          $conn = mysqli_connect($host, $user, $password, $db, $port);
          $mysqli = new mysqli($host, $user, $password, $db, $port);
          
@@ -8,5 +8,6 @@
          	"(".mysqli_connect_errno().")"
          	);
          }
+
 
 ?>

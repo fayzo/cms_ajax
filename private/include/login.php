@@ -6,21 +6,21 @@ if (isset($_SESSION['key'])) {
     header('location: '.BASE_URL_PRIVATE.'indexx.php');
     exit();
 }
+
+if (isset($_SESSION['keys']) && isset($_SESSION['username']) && isset($_SESSION['email'])) {
+    header('location: '.LOCKSCREEN_LOGIN.'');
+    exit();
+}
+
  if (isset($_POST['key']) == 'login') {
     
     $username = $conn->real_escape_string($_POST['username']);
     $email = $conn->real_escape_string($_POST['email']);
     $password = $conn->real_escape_string($_POST['password']);
+    $datetime= date('Y-m-d H-i-s');
 
-    $sql= $conn->query("SELECT admin_id ,color,language FROM add_admin WHERE username ='{$username}'and password='{$password}' or email ='{$email}'and password='{$password}' ");
-    $row= $sql->fetch_assoc();
-    if ($sql->num_rows > 0) {
-        $_SESSION['key'] = $row['admin_id'];
-        $_SESSION['username'] = $username;
-        exit ('<p style="color:green;">success</p>');
-    }else{
-        exit ('<p style="color:red;">incorrect input try again</p>');
-    }
+    $user_admin->login($username,$email,$password,$datetime);
+    
   } 
 ?>
 <!doctype html>
@@ -28,8 +28,8 @@ if (isset($_SESSION['key'])) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="<?php echo BASE_URL_LINK ;?>dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo BASE_URL_LINK ;?>dist/css/signin.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL_LINK_ALL ;?>dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL_LINK_ALL ;?>dist/css/signin.css" rel="stylesheet">
     <title>Signin Template for Bootstrap</title>
   </head>
 
@@ -37,8 +37,10 @@ if (isset($_SESSION['key'])) {
     <form class="form-signin">
       <img class="mb-4" src="" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <div class="form-group">
         <label for="inputEmail" class="sr-only">Username</label>
         <input type="text" id="Username" class="form-control mb-3" placeholder="Username" >
+      </div>
 
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control mb-3" placeholder="Email address">
@@ -57,9 +59,9 @@ if (isset($_SESSION['key'])) {
     </form>
     
 
-    <script src="<?php echo BASE_URL_LINK ;?>dist/js/jquery.min.js"></script>
-    <script src="<?php echo BASE_URL_LINK ;?>dist/js/popper.min.js"></script>
-    <script src="<?php echo BASE_URL_LINK ;?>dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo BASE_URL_LINK_ALL ;?>dist/js/jquery.min.js"></script>
+    <script src="<?php echo BASE_URL_LINK_ALL ;?>dist/js/popper.min.js"></script>
+    <script src="<?php echo BASE_URL_LINK_ALL ;?>dist/js/bootstrap.min.js"></script>
 <script>
   function manage(key){
       var username = $("#Username");
@@ -81,8 +83,13 @@ if (isset($_SESSION['key'])) {
            success: function(response){
                $("#response").html(response);
                 console.log(response);
-                if (response.indexOf('success') >= 0 ) {  
-                    window.location = '../indexx.php';
+                if (response.indexOf('Success') >= 0 ) {  
+                  window.location = '../indexx.php';
+                }else if(response.indexOf('Fail') >= 0 ){
+                  setInterval(() => {
+                    window.location =  'lockscreen.php';
+                  }, 1000);
+                  isEmptys(password);
                }else{
                    isEmptys(username) || isEmptys(email) || isEmptys(password) ;
                }

@@ -8,7 +8,7 @@
                     </div>
                     <div class="modal-body">
                      <div id="editContent_admin">
-                           
+                      <form method="post" enctype="multipart/form-data" id="users_form">
                          <div class="form-group">
                             <input type="hidden" id="admin_editRowID" value="0">
                             <label for="firstName">firstName</label>
@@ -56,13 +56,8 @@
                           <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
             
                              <label for="country">Country</label>
-                             <select class="custom-select d-block w-100" id="countryz" required>
-                               <option value="">Choose...</option>
-                               <option>Rwanda</option>
-                               <option>Burundi</option>
-                               <option>Tanzania</option>
-                               <option>Kenya</option>
-                             </select>
+                              <div id="myDiv">
+                              </div>
                              <div class="invalid-feedback">
                                Please select a valid country.
                              </div>
@@ -77,8 +72,78 @@
                               <div class="invalid-feedback">
                                 Please provide a valid state.
                               </div>       
-                          </div>       
+                          </div> 
+                          <div class="form-group image">
+                            <label for="">Upload Picture</label>
+                            <input type="file" class="form-control-file" name="image" id="image">
+                          </div>      
+                          <input type="submit" value="submit" class="btn btn-success user_form">
+                        </form>
                         </div> <!-- THIS IS EDIT-CONTENT -->
+
+                        <!-- START OF UPLOAD IMAGE CONTENT -->
+                      <div id="profile_image_ADMIN">
+                          <div class="container">
+
+                              <div class="user-box">
+                                  <div class="img-relative">
+                                      <!-- Loading image -->
+                                      <div class="overlay uploadProcess" style="display: none;">
+                                          <div class="overlay-content"><img src="<?php echo BASE_URL_LINK_ALL ;?>image/image_default/load.jpg" /></div>
+                                      </div>
+                                      <!-- Hidden upload form -->
+                                      <form method="post" action="<?php echo BASE_URL_PRIVATE;?>core/ajax/users_profile_image.php"  enctype="multipart/form-data"
+                                          id="picUploadForm" target="uploadTarget">
+                                          
+                                          <input type="hidden" name="edit_profile" id="edit_profile" value="" style="display:none" />
+                                          <input type="file" name="picture" id="fileInput" style="display:none" />
+                                      </form>
+                                      <iframe id="uploadTarget" name="uploadTarget" src="#"
+                                          style="width:0;height:0;border:0px solid black;"></iframe>
+                                      <!-- Image update link -->
+                                      <!-- <p class="editLink" `><img src="images/upload_image.png" width="80px" /></p> -->
+                                      <a href="javascript:void(0);" class="editLink" id="edit_linkUpload">
+                                      <img src="<?php echo BASE_URL_LINK_ALL ;?>image/image_default/upload_image.png" width="80px" /></a>
+                                      <!-- Profile image -->
+                                      <img id="imagePreview" class="imagePreview" width="180px">
+                                  </div>
+                                  <div class="name">
+                                      <h4>Profile_img :</h4>
+                                      <div  id="nameView4"></div> 
+                                  </div>
+                              </div>
+
+                              <div class="user-box">
+                                  <div class="img-relative">
+                                      <!-- Loading image -->
+                                      <div class="overlay cover_uploadProcess" style="display: none;">
+                                          <div class="overlay-content"><img src="<?php echo BASE_URL_LINK_ALL ;?>image/image_default/load.jpg" /></div>
+                                      </div>
+                                      <!-- Hidden upload form -->
+                                      <form method="post" action="<?php echo BASE_URL_PRIVATE;?>core/ajax/users_profile_image.php"  enctype="multipart/form-data"
+                                          id="cover_picUploadForm" target="cover_uploadTarget">
+                                          
+                                          <input type="hidden" name="edit_cover" id="edit_cover" value="" style="display:none" />
+                                          <input type="file" name="cover_picture" id="cover_fileInput" style="display:none" />
+                                      </form>
+                                      <iframe id="cover_uploadTarget" name="cover_uploadTarget" src="#"
+                                          style="width:0;height:0;border:0px solid black;"></iframe>
+                                      <!-- Image update link -->
+                                      <!-- <p class="editLink" `><img src="images/upload_image.png" width="80px" /></p> -->
+                                      <a href="javascript:void(0);" class="editLinks" id="edit_linkUpload">
+                                      <img src="<?php echo BASE_URL_LINK_ALL ;?>image/image_default/upload_image.png" width="80px" /></a>
+                                      <!-- Profile image -->
+                                      <img id="cover_imagePreview" class="cover_imagePreview" width="180px">
+                                  </div>
+                                  <div class="name">
+                                      <h4>Cover_img :</h4>
+                                      <div id="cover_nameView4"></div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                      <!-- END OF UPLOAD IMAGE CONTENT -->
 
                         <div id="showContent_admin" style="display:none;">
 

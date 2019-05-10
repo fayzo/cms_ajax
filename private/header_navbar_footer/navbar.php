@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg fixed-top">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Menya</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,33 +7,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#"><i style="font-size: 22px;" class="fa fa-home"></i> <?php echo $lang['home'];?> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pages</a>
+        <a class="nav-link" href="#"><?php echo $lang['pages'];?></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Posts</a>
+        <a class="nav-link" href="#"><?php echo $lang['posts'];?></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#"><?php echo $lang['about'];?></a>
       </li>
     </ul>
-    
-     <ul class="navbar-nav">
-          <li class="nav-item">
-              <a href="#" onclick="language('fr',<?php echo $_SESSION['key'];?>);"><img
-                      src="<?php echo BASE_URL_LINK ;?>image/flag/iconfinder_Flag_of_France_96147.png" width="30px"></a>
-          </li>
-          <li class="nav-item">
-              <a href="#" onclick="language('en',<?php echo $_SESSION['key'];?>);"><img
-                      src="<?php echo BASE_URL_LINK ;?>image/flag/iconfinder_Flag_of_United_Kingdom_96354.png" width="30px"></a>
-          </li>
-          <li class="nav-item">
-              <a href="#" onclick="language('rw',<?php echo $_SESSION['key'];?>);"><img
-                      src="<?php echo BASE_URL_LINK ;?>image/flag/iconfinder_Flag_of_Rwanda_96263.png" width="30px"></a>
-          </li>
-      </ul>
 
         <div class="navbar-custom-menu">
         <ul class="navbar-nav ">
@@ -51,7 +36,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo BASE_URL_LINK ;?>image/img/user2-160x160.jpg" class="rounded-circle" alt="User Image">
+                        <img src="<?php echo BASE_URL_LINK_ALL ;?>image/img/user2-160x160.jpg" class="rounded-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -64,7 +49,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo BASE_URL_LINK ;?>image/img/user3-128x128.jpg" class="rounded-circle" alt="User Image">
+                        <img src="<?php echo BASE_URL_LINK_ALL ;?>image/img/user3-128x128.jpg" class="rounded-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design
@@ -76,7 +61,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo BASE_URL_LINK ;?>image/img/user4-128x128.jpg" class="rounded-circle" alt="User Image">
+                        <img src="<?php echo BASE_URL_LINK_ALL ;?>image/img/user4-128x128.jpg" class="rounded-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -88,7 +73,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo BASE_URL_LINK ;?>image/img/user3-128x128.jpg" class="rounded-circle" alt="User Image">
+                        <img src="<?php echo BASE_URL_LINK_ALL ;?>image/img/user3-128x128.jpg" class="rounded-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -100,7 +85,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo BASE_URL_LINK ;?>image/img/user4-128x128.jpg" class="rounded-circle" alt="User Image">
+                        <img src="<?php echo BASE_URL_LINK_ALL ;?>image/img/user4-128x128.jpg" class="rounded-circle" alt="User Image">
                       </div>
                       <h4>
                         Reviewers
@@ -176,7 +161,7 @@
                         <small class="pull-right">20%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                        <div class="progress-bar bg-dander" style="width: 20%" role="progressbar"
                              aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">20% Complete</span>
                         </div>
@@ -191,7 +176,7 @@
                         <small class="pull-right">40%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
+                        <div class="progress-bar bg-secondary" style="width: 40%" role="progressbar"
                              aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">40% Complete</span>
                         </div>
@@ -206,7 +191,7 @@
                         <small class="pull-right">60%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
+                        <div class="progress-bar bg-warning" style="width: 60%" role="progressbar"
                              aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">60% Complete</span>
                         </div>
@@ -240,14 +225,14 @@
            <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu nav-item">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-              <img src="<?php echo BASE_URL_LINK ;?>image/img/user2-160x160.jpg" class="user-image rounded-circle" alt="User Image">
-              <span class="hidden-xs"><?php echo $_SESSION['username'];?></span>
+              <img src="<?php echo BASE_URL_LINK_ALL ;?>image/img/user2-160x160.jpg" class="user-image rounded-circle" alt="User Image">
+              <span class="hidden-xs"><span id="welcome-json"></span> <?php echo $_SESSION['username'];?></span>
             </a>
+
             <ul class="dropdown-menu">
               <!-- User image -->
-              <li class="user-header">
-                <img src="<?php echo BASE_URL_LINK ;?>image/img/user2-160x160.jpg" class="rounded-circle" alt="User Image">
-
+              <li class="user-header" style="background: url('<?php echo BASE_URL_LINK_ALL ;?>image/img/photo1.png') center center;background-size: cover; overflow: hidden; width: 100%;">
+                <img src="<?php echo BASE_URL_LINK_ALL ;?>image/img/user2-160x160.jpg" class="rounded-circle" alt="User Image">
                 <p>
                   <?php echo $_SESSION['username'];?> - Web Developer
                   <small>Member since Nov. 2012</small>
@@ -271,10 +256,10 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-light">Profile</a>
+                  <a href="<?php echo PROFILE ;?>" class="btn btn-info btn-sm">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo LOGOUT ;?>" class="btn btn-light ">Sign out</a>
+                  <a href="<?php echo LOGOUT ;?>" class="btn btn-danger btn-sm ">Sign out</a>
                 </div>
               </li>
             </ul>

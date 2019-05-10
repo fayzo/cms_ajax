@@ -52,6 +52,7 @@ include('../init.php');
 								<input type="button" onclick="viewORedits('.$row["admin_id"].', \'edit\')" value="Edit" class="btn btn-primary">
 								<input type="button" onclick="viewORedits('.$row["admin_id"].', \'view\')" value="View" class="btn">
 								<input type="button" onclick="deleteRow('.$row["admin_id"].')" value="Delete" class="btn btn-danger">
+								<button type="button" name="update_profile_id" id="'.$row["admin_id"].'" class="btn btn-primary update_profile_id" role="button"><span class="fa fa-image"></button>
 							</td>
 						</tr>
 					';
@@ -59,6 +60,19 @@ include('../init.php');
 				exit($response);
 			} else
 				exit('Max');
+		}
+
+		if ($_POST['key'] == 'image') {
+        	$rowID = $db->real_escape_string($_POST['id']);
+        	$sql = $db->query("SELECT admin_id, username, profile_image , cover_image FROM add_admin WHERE admin_id=' $rowID'");
+        	$data = $sql->fetch_array();
+        	$jsonArrays = array(
+        		'admin_id' => $data['admin_id'],
+        		'username' => $data['username'],
+        		'profile_image' => $data['profile_image'],
+        		'cover_image' => $data['cover_image'],
+        	);
+        	exit(json_encode($jsonArrays));
 		}
 
 		$rowID = $conn->real_escape_string($_POST['rowID']);

@@ -88,7 +88,7 @@ $message ="";
                        </div>  <!-- THIS IS EDIT_CONTENT -->     
                        
                          <div id="uncommt_image">      
-                           <div id="preview"><img src="<?php echo BASE_URL_LINK ;?>image/file_log/filed.png" width="100px"/></div><br>
+                           <div id="preview"><img src="<?php echo BASE_URL_LINK_ALL ;?>image/file_log/filed.png" width="100px"/></div><br>
                            <label for="file">File input :</label><?php echo " ".$message ; ?><br>
                            <input type="hidden" name="MAX_FILE_SIZE" value ="<?php echo $max;?>">
                     	     <input id="uploadImage" type="file" accept="image/*" name="image" />
@@ -97,7 +97,7 @@ $message ="";
 
                          <div id="show_uncomment" style="display:none;">
                             <p><span style="font-weight:bold;font-size:17px;">Image : </span>
-                            <img width = "60px" src="<?php echo BASE_URL_LINK ;?>image/commets_uploads/"><span id="imageView_comment"></span></p>
+                            <img width = "60px" src="<?php echo BASE_URL_LINK_ALL ;?>image/uploads_commets/"><span id="imageView_comment"></span></p>
                             <hr>
                             <p><span style="font-weight:bold;font-size:17px;">TITLE : </span>
                             <span id="titleView_uncomment"></span> </p>

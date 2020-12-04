@@ -894,6 +894,7 @@ class Home extends Users{
             $data[] = $row;
             /* TABLE OF tweety */
         }
+
                              foreach ($data as $tweet) {
                                 $likes= $this->likes($user_id,$tweet['tweet_id']);
                                 $retweet= $this->checkRetweet($tweet['tweet_id'],$user_id);
